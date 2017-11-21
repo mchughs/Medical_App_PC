@@ -17,12 +17,12 @@ public class Volunteer {
     public Volunteer(String first, String last, String email,
     String sector_year, String region, String banking_town,
     LocalDate next_contact, ArrayList<Medicine> myMedicine) {
-        this.first        = first;
-        this.last         = last;
+        this.first        = first.substring(0, 1).toUpperCase() + first.substring(1);
+        this.last         = last.substring(0, 1).toUpperCase() + last.substring(1);
         this.email        = email;
         this.sector_year  = sector_year;
         this.region       = region;
-        this.banking_town = banking_town;
+        this.banking_town = banking_town.substring(0, 1).toUpperCase() + banking_town.substring(1);
         this.next_contact = next_contact;
         this.myMedicine   = myMedicine;
         this.sendQueue    = new ArrayList<Medicine>();

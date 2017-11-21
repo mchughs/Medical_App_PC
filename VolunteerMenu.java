@@ -5,7 +5,7 @@ import java.util.List;
 import static java.util.Arrays.asList;
 import java.util.Scanner;
 
-public class AppTest {
+public class VolunteerMenu {
 
     public static void main(String args[]) {
       /* Create a blank volunteer */
@@ -18,15 +18,18 @@ public class AppTest {
 
       System.out.print("Enter your first name: ");
       myVolunteer.first = scanner.nextLine();
+      myVolunteer.first = myVolunteer.first.substring(0,1).toUpperCase() + myVolunteer.first.substring(1);
 
       System.out.print("Enter your last name: ");
       myVolunteer.last = scanner.nextLine();
+      myVolunteer.last = myVolunteer.last.substring(0,1).toUpperCase() + myVolunteer.last.substring(1);
 
       System.out.print("Enter your email: ");
       myVolunteer.email = scanner.nextLine();
 
       System.out.print("Enter your banking town: ");
       myVolunteer.banking_town = scanner.nextLine();
+      myVolunteer.banking_town = myVolunteer.banking_town.substring(0,1).toUpperCase() + myVolunteer.banking_town.substring(1);
 
       System.out.print("Select your sector/year then press enter: ");
       System.out.print("\n (1) Extendee \n (2) H/Ag'16 \n (3) Ed'16 " +
@@ -64,17 +67,15 @@ public class AppTest {
 
       System.out.print("Select your region then press enter: ");
 
-      System.out.print("\n (1) Arusha \n (2) DSM \n (3) Dodoma \n (4) Geita \n" +
-      " (5) Iringa \n (6) Kagera \n (7) Katavi \n (8) Kigoma \n (9) Kilimanjaro \n" +
-      " (10) Lindi \n (11) Manyara \n (12) Mara \n (13) Mbeya \n (14) Morogoro \n" +
-      " (15) Mtwara \n (16) Mwanza \n (17) Njombe \n (18) Pemba \n (19) Pwani \n" +
-      " (20) Rukwa \n (21) Ruvuma \n (22) Shinyanga \n (23) Simiyu \n (24) Singida" +
-      "\n (25) Songwe \n (26) Tabora \n (27) Tanga \n (28) Unguja \n");
-
       List<String> regionsList = asList("Arusha", "DSM", "Dodoma", "Geita", "Iringa",
       "Kagera", "Katavi", "Kigoma", "Kilimanjaro", "Lindi", "Manyara", "Mara", "Mbeya",
       "Morogoro", "Mtwara", "Mwanza", "Njombe", "Pemba", "Pwani", "Rukwa", "Ruvuma",
       "Shinyanga", "Simiyu", "Singida", "Songwe", "Tabora", "Tanga", "Unguja");
+
+      for(int k = 0; k < regionsList.size(); k++) {
+        System.out.println(" (" + (k+1) + ") " + regionsList.get(k));
+      }
+
       int j = scanner.nextInt();
       myVolunteer.region = regionsList.get(j-1);
 
